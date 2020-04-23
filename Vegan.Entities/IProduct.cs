@@ -8,7 +8,7 @@ namespace Vegan.Entities
 {
     interface IProduct
     {
-        int Id { get; set; }
+         int Id { get; set; }
         string Title { get; set; }
         decimal Price { get; set; }
     }

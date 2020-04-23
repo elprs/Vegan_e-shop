@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace Vegan.Entities.Home
 {
-    class Home 
+    public abstract class Home : IProduct
     {
-        //RELATIONSHIPS
-        // Candle ---  0-m 
-
-        //Navigation Property
-        public virtual ICollection<Candle> Candles { get; set; }
+        public int Id { get; set ; }
+        public string Title { get ; set ; }
+        public decimal Price { get ; set ; }
     }
 }

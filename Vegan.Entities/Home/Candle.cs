@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace Vegan.Entities.Home
 {
-    class Candle : IProduct
+    public class Candle : Home
     {
 
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public decimal Price { get; set; }
-
-        //public string ImageURL { get; set; }
+             //public string ImageURL { get; set; }
         //public string Description { get; set; }
         //public string Why { get; set; }
         //public string Size { get; set; } //eg 5x3"
