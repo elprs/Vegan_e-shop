@@ -384,6 +384,10 @@
       <Project>{6cb08aab-4499-4454-bf34-ad914cf50721}</Project>
       <Name>Vegan.Services</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Vegan.Web\Vegan.Web.csproj">
+      <Project>{152F7E95-3CCC-4C9B-A7D5-D2B278D6F24D}</Project>
+      <Name>Vegan.Web</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -12,9 +12,9 @@ using Vegan.Entities.Supplement;
 
 namespace Vegan.Database
 {
-   public  class MyDatabase : DbContext
+   public  class MyDatabase : ApplicationDbContext
     {
-        public MyDatabase() : base("Connection")
+        public MyDatabase() : base()
         {
            
         }

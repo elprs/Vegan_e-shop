@@ -10,7 +10,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using Vegan.WebApp.Models;
+using Vegan.Entities;
 
 namespace Vegan.WebApp
 {
