@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Vegan.Entities.Supplement.PowerHealth>
+﻿@model IEnumerable<Vegan.Entities.Supplement.SuperFood>
 
 @{
     ViewBag.Title = "Index";
@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Add Power Health product", "AddPowerHealth")
+    @Html.ActionLink("Add Super Food", "AddSuperFood")
 </p>
 <table class="table">
     <tr>
@@ -52,9 +52,6 @@
                 </th>
             }
         }
-        <th>
-            @Html.DisplayNameFor(model => model.UseInstruction)
-        </th>
         <th></th>
     </tr>
 
@@ -82,12 +79,9 @@
             @Html.DisplayFor(modelItem => item.ValueOfIngredient)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.UseInstruction)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "EditPowerHealth", new { productId = item.Id }) |
-            @Html.ActionLink("Details", "DetailsPowerHealth", new { productId = item.Id }) |
-            @Html.ActionLink("Delete", "DeletePowerHealth", new { productId = item.Id })
+            @Html.ActionLink("Edit", "EditSuperFood", new { productId = item.Id }) |
+            @Html.ActionLink("Details", "DetailsSuperFood", new { productId = item.Id }) |
+            @Html.ActionLink("Delete", "DeleteSuperFood", new { productId = item.Id })
         </td>
     </tr>
 }

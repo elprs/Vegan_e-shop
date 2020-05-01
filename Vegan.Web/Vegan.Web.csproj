@@ -218,6 +218,7 @@
     <Compile Include="Controllers\TestControllers\TestUFaceCreamController.cs" />
     <Compile Include="Controllers\TestControllers\TestUProductController.cs" />
     <Compile Include="Controllers\TestControllers\TestUPowerHealthController.cs" />
+    <Compile Include="Controllers\TestUSuperFoodController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -406,9 +407,15 @@
     <Content Include="Views\TestUPowerHealth\DetailsPowerHealth.cshtml" />
     <Content Include="Views\TestUPowerHealth\EditPowerHealth.cshtml" />
     <Content Include="Views\TestUPowerHealth\DeletePowerHealth.cshtml" />
+    <Content Include="Views\SuperFood\Index.cshtml" />
+    <Content Include="Views\SuperFood\AddSuperFood.cshtml" />
+    <Content Include="Views\SuperFood\DetailsSuperFood.cshtml" />
+    <Content Include="Views\SuperFood\EditSuperFood.cshtml" />
+    <Content Include="Views\SuperFood\DeleteSuperFood.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\TestUSuperFood\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
