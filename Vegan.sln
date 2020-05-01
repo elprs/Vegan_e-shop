@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vegan.Entities", "Vegan.Ent
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vegan.Web", "Vegan.Web\Vegan.Web.csproj", "{152F7E95-3CCC-4C9B-A7D5-D2B278D6F24D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vegan.WebApp", "Vegan.WebApp\Vegan.WebApp.csproj", "{C4BCA8BB-5841-4077-94DF-E8D436C80DBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{152F7E95-3CCC-4C9B-A7D5-D2B278D6F24D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{152F7E95-3CCC-4C9B-A7D5-D2B278D6F24D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{152F7E95-3CCC-4C9B-A7D5-D2B278D6F24D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4BCA8BB-5841-4077-94DF-E8D436C80DBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4BCA8BB-5841-4077-94DF-E8D436C80DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4BCA8BB-5841-4077-94DF-E8D436C80DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4BCA8BB-5841-4077-94DF-E8D436C80DBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
