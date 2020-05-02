@@ -11,6 +11,7 @@ using Microsoft.Owin.Security;
 using Vegan.Entities;
 using Vegan.WebApp.Models;
 
+
 namespace Vegan.WebApp.Controllers
 {
     [Authorize]
