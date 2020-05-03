@@ -6,9 +6,8 @@ using System.Web.Mvc;
 using Vegan.Database;
 using Vegan.Entities;
 using Vegan.Services;
-using System.ComponentModel.DataAnnotations;
 
-namespace Vegan.Web.Controllers.TestControllers
+namespace Vegan.Web.Areas.ProductArea.Controllers
 {
     public class ProductController : Controller
     {

@@ -3,7 +3,8 @@
         <div class="container-fluid">
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a class="nav-link" href="/Product/Index">Products</a>
+                    @*<a class="nav-link" href="/Product/Index">Products</a>*@
+                    @Html.ActionLink("Products", "Index", "Product", new { area = "ProductArea" }, new { @class = "navbar-brand" })
                 </li>
 
                 <li class="nav-item dropdown">

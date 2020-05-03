@@ -183,10 +183,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\ProductArea\Controllers\ProductController.cs" />
+    <Compile Include="Areas\ProductArea\ProductAreaAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\TestControllers\TestUCareController.cs" />
     <Compile Include="Controllers\TestControllers\TestUFaceCreamController.cs" />
     <Compile Include="Controllers\TestControllers\TestUProductController.cs" />
@@ -234,6 +235,8 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Areas\ProductArea\Views\web.config" />
+    <Content Include="Areas\ProductArea\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-3.5.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.0.js" />
     <Content Include="Scripts\jquery-3.5.0.min.js" />
@@ -381,16 +384,18 @@
     <Content Include="Views\TestUSproutingSeed\AddSproutingSeed.cshtml" />
     <Content Include="Views\TestUSproutingSeed\DetailsSproutingSeed.cshtml" />
     <Content Include="Views\TestUSproutingSeed\Index.cshtml" />
-    <Content Include="Views\Product\AddProduct.cshtml" />
-    <Content Include="Views\Product\DeleteProduct.cshtml" />
-    <Content Include="Views\Product\DetailsProduct.cshtml" />
-    <Content Include="Views\Product\EditProduct.cshtml" />
-    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Areas\ProductArea\Views\Product\AddProduct.cshtml" />
+    <Content Include="Areas\ProductArea\Views\Product\DeleteProduct.cshtml" />
+    <Content Include="Areas\ProductArea\Views\Product\DetailsProduct.cshtml" />
+    <Content Include="Areas\ProductArea\Views\Product\EditProduct.cshtml" />
+    <Content Include="Areas\ProductArea\Views\Product\Index.cshtml" />
     <Content Include="Views\Shared\Components\_Footer.cshtml" />
     <Content Include="Views\Shared\Components\_NavigationBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\ProductArea\Data\" />
+    <Folder Include="Areas\ProductArea\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
