@@ -10,5 +10,8 @@ namespace Vegan.Entities.FoodHerb
     {
         public string Information { get; set; }
         //Review
+
+
+
     }
 }
