@@ -79,11 +79,11 @@
     <Compile Include="SupplementRepository\SuperFoodRepository.cs" />
     <Compile Include="SupplementRepository\SupplementRepository.cs" />
     <Compile Include="UnitOfWork.cs" />
-    <Compile Include="UnitOfWorkPattern\OldGenericRepository.cs" />
-    <Compile Include="Interfaces\OldIGenericRepository.cs" />
-    <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="OldUnitOfWorkPattern\OldGenericRepository.cs" />
+    <Compile Include="OldInterfaces\OldIGenericRepository.cs" />
+    <Compile Include="OldInterfaces\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitOfWorkPattern\OldUnitOfWork.cs" />
+    <Compile Include="OldUnitOfWorkPattern\OldUnitOfWork.cs" />
     <Compile Include="UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>

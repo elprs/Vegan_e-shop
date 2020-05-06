@@ -20,5 +20,6 @@ namespace Vegan.Web.Areas.ProductArea
                 new { action = "Index", id = UrlParameter.Optional }
             );
         }
+
     }
 }
