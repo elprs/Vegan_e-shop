@@ -188,10 +188,12 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PowerHealthController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\SproutingSeedController.cs" />
     <Compile Include="Controllers\TestControllers\TestUCareController.cs" />
     <Compile Include="Controllers\TestControllers\TestUFaceCreamController.cs" />
     <Compile Include="Controllers\TestControllers\TestUProductController.cs" />
-    <Compile Include="Controllers\TestControllers\TestUSproutingSeedController.cs" />
     <Compile Include="Controllers\TestUEssentialOilController.cs" />
     <Compile Include="Controllers\TestUTeaController.cs" />
     <Compile Include="Global.asax.cs">
@@ -391,6 +393,13 @@
     <Content Include="Areas\ProductArea\Views\Product\Index.cshtml" />
     <Content Include="Views\Shared\Components\_Footer.cshtml" />
     <Content Include="Views\Shared\Components\_NavigationBar.cshtml" />
+    <Content Include="Views\SproutingSeed\Index.cshtml" />
+    <Content Include="Views\SproutingSeed\AddSproutingSeed.cshtml" />
+    <Content Include="Views\SproutingSeed\DetailsSproutingSeed.cshtml" />
+    <Content Include="Views\SproutingSeed\EditSproutingSeed.cshtml" />
+    <Content Include="Views\SproutingSeed\DeleteSproutingSeed.cshtml" />
+    <Content Include="Views\PowerHealth\Index.cshtml" />
+    <Content Include="Views\PowerHealth\AddPowerHealth.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
