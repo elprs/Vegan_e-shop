@@ -17,6 +17,8 @@ namespace Vegan.Entities.Library
             return userIdentity;
         }
 
+        public string Address { get; set; }
+
         //~~~~~~~~~~~~~~~~~~~~ Navigation Property Relationships with
         // Order --> one to zero
         public virtual Order Order { get; set; }

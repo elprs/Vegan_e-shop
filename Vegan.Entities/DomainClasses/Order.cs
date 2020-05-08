@@ -13,49 +13,51 @@ namespace Vegan.Entities
         [Display(Name = "Order ID")]
         public int OrderId { get; set; }
         [Display(Name = "Order stamp")]
-        public DateTime OrderStamp { get; set; }
+        public DateTime OrderStamp { get; set; } //that is the dateTime that will be created on submit
 
-        public class Item
-        {
-            public Product Product { get; set; }
-            public int Quantity { get; set; }
-        }
-        public IEnumerable<Item> Items { get; set; }
+        //======== Navigation Properties  Relationships with
 
-        public ApplicationUser User { get; set; }
-
-
-        //======== Navigation Property  Relationships with
-        // Product -->  many
+        //Plan A ===========> // Keeping the class in this form, means that from the server, on sumbit, we send to the db a list of products. In other words, this instanse recieves a list of products. In case a product has quantity > 1, it will ve rewritten in the list for as many times as the quantity and this logic needs to be at the cart before the sumbit event.
         public virtual ICollection<Product> Products { get; set; }
+        [Display(Name = "Your account")]
+        public virtual ApplicationUser User { get; set; }
 
-        // ============================================== Constructor ===========================================
-        public Order(DateTime orderStamp, IEnumerable<Item> items, ICollection<Product> products, ApplicationUser user)
+        // ============================================== Constructor ==========================================
+        public Order(DateTime orderStamp, ICollection<Product> products, ApplicationUser user)
         {
             this.OrderStamp = orderStamp;
-            this.Items = items;
             this.Products = products;
             this.User = user;
-
-
         }
+
        // ============================================== Methods ===============================================
-       public void AddOrderItem(Item item)
+
+        //Returns the user's delivery details as a string
+        public string SetDeliveryDetails(ApplicationUser user)
         {
-            //code
+            return string.Concat("Name :", user.UserName, "Full Address: ", user.Address, "Phone number: ", user.PhoneNumber);
         }
 
-        public void SetAddress(ApplicationUser user)
+        //Calculates the total price of the Order
+        public decimal CalculateTotal(IEnumerable<Product> products)
         {
-            //code
-        }
-
-        public decimal CalculateTotal(IEnumerable<Item> items)
-        {
-            //code
-            return;
+            decimal totalPrice = products.Sum(product => product.Price);
+            return totalPrice;
         }
 
 
+        //Plan B ===> create a class named Item that holds the quantity of each added to the cart product and send to the Order Items and not Products
+
+        //public class Item
+        //{
+        //    public Product Product { get; set; }
+        //    public int Quantity { get; set; }
+        //}
+
+
+        //public void AddOrderProduct(Product product)
+        //{
+        //    //code
+        //}
     }
 }
