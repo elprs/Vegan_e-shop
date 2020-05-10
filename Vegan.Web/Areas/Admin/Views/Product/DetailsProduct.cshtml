@@ -1,0 +1,52 @@
+﻿@model Vegan.Entities.Product
+
+@{
+    ViewBag.Title = "DetailsProduct";
+}
+
+
+<h1 style="color:#0026ff">Details Product Admin Area</h1>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageURL)
+        </dt>
+
+        <dd>
+            <img src=" @Html.DisplayFor(model => model.ImageURL)" width='100' height='100' alt=" @Html.DisplayFor(model => model.Title)" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditProduct", new { productId = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+

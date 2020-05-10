@@ -19,6 +19,12 @@ namespace Vegan.Web.Areas.User
                 "User/{controller}/{action}/{id}",
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            context.MapRoute(
+                "User_product",
+                "User/{controller}/{action}/{id}",
+                new { controller = "Product", action = "Index", id = UrlParameter.Optional }
+            );
         }
     }
 }
