@@ -67,10 +67,10 @@ namespace Vegan.Services
         public IOrder Orders { get; private set; }
         public IProduct Products { get; private set; }
         public IUser Users { get; private set; }
-
+        
         public int Complete()
         {
-            return context.SaveChanges();
+            return context.SaveChanges();            
         }
 
         public void Dispose()
