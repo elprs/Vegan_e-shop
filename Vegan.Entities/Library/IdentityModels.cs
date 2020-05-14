@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -17,10 +18,12 @@ namespace Vegan.Entities.Library
             return userIdentity;
         }
 
-        //~~~~~~~~~~~~~~~~~~~~ Navigation Property Relationships with
-        // Order --> one to zero
-        public virtual Order Order { get; set; }
+        //============================= Property ===========================================================================
+        public string Address { get; set; }
+        public string Country { get; set; }
 
+        //============================= Navigation Property ================================================================
+        public virtual List<Order> Orders { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
