@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vegan.Entities.DomainClasses.ECommerce
 {
-    class Cart
+    public class Cart
     {
         //=================================== Properties ===================================================================
         public List<CartItem> CartItems { get; set; }

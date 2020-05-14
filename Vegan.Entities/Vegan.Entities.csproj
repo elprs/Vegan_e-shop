@@ -87,6 +87,7 @@
     <Compile Include="DomainClasses\Care\Size.cs" />
     <Compile Include="DomainClasses\ECommerce\Cart.cs" />
     <Compile Include="DomainClasses\ECommerce\CartItem.cs" />
+    <Compile Include="DomainClasses\ECommerce\Shipping.cs" />
     <Compile Include="DomainClasses\FoodHerb\FoodHerb.cs" />
     <Compile Include="DomainClasses\FoodHerb\Salt.cs" />
     <Compile Include="DomainClasses\FoodHerb\Spice.cs" />
