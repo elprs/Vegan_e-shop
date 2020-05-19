@@ -7,7 +7,7 @@
 
 
 
-<div id="top" pxlurl="[product_url]" class="container">
+<div id="top" pxlurl="[product_url]" class="container-fluid">
     <div class="contentbox-wrapper docsection-wrapper">
         <div class="contentbox docsection boxed productlist">
             <div id="pageheader" class=" ">
@@ -73,17 +73,34 @@
                 </div>*@
 
         </div>
-        @*</div>
-            </div>
-            <div class="content-wrapper clearfix container">*@
         <div class="content container">
             @foreach (var item in Model)
             {
-                <div class="product">
-                    <div
-                       
-                            class="image"
-                            style=" 
+                
+            <div class="product">
+
+
+                @{
+                    var typeClass = item.GetType().BaseType.ToString();
+                    string[] classss = typeClass.Split('.');
+
+                    //var typeClass = Model.propertyName.GetType().ToString();
+                    string actionName = String.Concat("Details", classss[classss.Length - 1]);
+                    string finalString = "\"" + actionName + "\"";
+                    var t = classss[classss.Length - 1];
+                    @*@(@(t) (item)) item;
+                    var fakeItem = @(t)*@
+                }
+
+                <p>    @actionName</p>
+                <p>    @typeClass</p>
+                <p>   @classss[classss.Length - 1]</p>
+                <p>    @finalString</p>
+
+
+                <div @*TODO move the style to CSS file"*@
+                     class="image"
+                     style="
                          filter: @*blur(8px);*@
                             -webkit-filter: blur(4px);
                             background-position: center;
@@ -93,27 +110,37 @@
 
                          @*background-position: center;*@
                             background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));
-                            max-height: 400px; "
-                         >
-                             
-                        <img src="@Html.DisplayFor(modelItem => item.ImageURL)" style="max-height:400px;  filter: blur(0px);">
-                    </div>
-                    <div class="frame"></div>
-                    <div class="info">
-                        <div class="info-data">
+                            max-height: 400px; ">
+
+                    <img src="@Html.DisplayFor(modelItem => item.ImageURL)" style="max-height:400px;  filter: blur(0px);">
+                </div>
+                <div class="frame"></div>
+                <div class="info">
+                    <div class="info-data">
+                        <div>
                             <div>
-                                <div>
-                                    @Html.ActionLink("Read More", "DetailsProduct", new { productId = item.Id })
-                                    <div class="price">
-                                        <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
-                                    </div>
+
+                                @*@if (item.GetType().BaseType == typeof(Employee))
+        {
+            //item is of type Employee
+        }*@
+
+
+
+                                @Html.ActionLink("Read More", finalString, new { productId = item.Id })
+                                @Html.Raw.RewardType.Replace("Idea", "<a href=/ideas/challengeidea/" + item.fkiIdeaId + ">Idea</a>"))
+                                <div class="price">
+                                    <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    @*Brings dynamicly the title and tranform it into a link connected to the candle's details*@
-                    <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), "DetailsProduct", new { productId = item.Id })</h3>
                 </div>
+                @*Brings dynamicly the title and tranform it into a link connected to the candle's details*@
+                <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), finalString, new { productId = item.Id })</h3>
+
+            </div>
+                 <hr />  
             }
         </div>
     </div>
