@@ -191,6 +191,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdministratorController.cs" />
+    <Compile Include="Controllers\AllProductController.cs" />
     <Compile Include="Controllers\CandleController.cs" />
     <Compile Include="Controllers\CareController.cs" />
     <Compile Include="Controllers\FoodHerbController.cs" />
@@ -218,7 +219,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\ProductViewModel.cs" />
+    <Compile Include="Models\AllProductViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -1077,6 +1078,7 @@
     <Content Include="Views\HomeVegan\IndexUser.cshtml" />
     <Content Include="Views\Shared\TESTview.cshtml" />
     <Content Include="Views\HomeVegan\EditHomeVegan.cshtml" />
+    <Content Include="Views\AllProduct\IndexUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

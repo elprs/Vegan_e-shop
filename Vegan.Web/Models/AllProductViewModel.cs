@@ -12,7 +12,7 @@ using Vegan.Services;
 
 namespace Vegan.Web.Models
 {
-    public class ProductViewModel
+    public class AllProductViewModel
     {
 
         // ================================ Properties =========================================
@@ -25,7 +25,7 @@ namespace Vegan.Web.Models
 
         // ================================ Constructors =======================================
 
-        public ProductViewModel()
+        public AllProductViewModel()
         {
              UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
              HomeProducts = unitOfWork.Homes.GetAll().ToList();
