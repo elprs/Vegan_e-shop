@@ -1,27 +1,113 @@
 ﻿@model  Vegan.Web.Models.AllProductViewModel
 
 @{
-    ViewBag.Title = "IndexUser";
+    ViewBag.Title = "All Products";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
-<h2>IndexUser</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+@*<table class="table">
     <tr>
         <th></th>
     </tr>
 
-@foreach (var item in Model.HomeProducts) {
-    <tr>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model.HomeProducts)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
 
-</table>
+</table>*@
+
+
+
+<div id="top" pxlurl="[product_url]">
+    <div class="contentbox-wrapper">
+        <div class="contentbox docsection boxed productlist">
+            <div id="pageheader" class="docsection-wrapper ">
+                <div class="">
+                    <div class="breadcrumbs-wrapper clearfix">
+                        <div class="breadcrumbs">
+                            <section>
+                                <p><a id='catCrumbHomeLink' href='/'>Home</a> > <a href="/AllProduct/IndexUser">All Products </a> </p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="title-wrapper clearfix">
+                        <div class="title">
+                            <header>
+                                <h1>All Products</h1>
+                            </header>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-wrapper clearfix">
+                <div class="header">
+                    <header>
+                        <h2>
+                            <small>Total Items: @Model.HomeProducts.Count() </small>
+                        </h2>
+                    </header>
+                </div>
+            </div>
+            <div class="content-wrapper clearfix">
+                <div class="content">
+                    @foreach (var item in Model.HomeProducts)
+                    {
+                        <div class="product">
+                            <div class="image" style=" background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));"><img src="@Html.DisplayFor(modelItem => item.ImageURL)"></div>
+                            <div class="frame"></div>
+                            <div class="info">
+                                <div class="info-data">
+                                    <div>
+                                        <div>
+                                            @Html.ActionLink("Read More", "DetailsCandle", new { productId = item.Id })
+                                            <div class="price">
+                                                <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @*Brings dynamicly the title and tranform it into a link connected to the candle's details*@
+                            <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), "DetailsCandle", new { productId = item.Id })</h3>
+                        </div>
+                    }
+                </div>
+                <h1>    0000000000000000000000000000000000000000000000 </h1>
+                <div class="content">
+                    @foreach (var item in Model.CandleProducts)
+                    {
+                        <div class="product">
+                            <div class="image" style=" background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));"><img src="@Html.DisplayFor(modelItem => item.ImageURL)"></div>
+                            <div class="frame"></div>
+                            <div class="info">
+                                <div class="info-data">
+                                    <div>
+                                        <div>
+                                            @Html.ActionLink("Read More", "DetailsCandle", new { productId = item.Id })
+                                            <div class="price">
+                                                <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @*Brings dynamicly the title and tranform it into a link connected to the candle's details*@
+                            <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), "DetailsCandle", new { productId = item.Id })</h3>
+                        </div>
+                    }
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+

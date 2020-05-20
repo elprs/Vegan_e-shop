@@ -20,7 +20,7 @@ namespace Vegan.Web.Controllers
         {
             AllProductViewModel allProductVM = new AllProductViewModel();
 
-            var homes = unitOfWork.Homes.GetAll();
+            var homes = unitOfWork.Homes.GetAll(); //to check if needed
 
             allProductVM.HomeProducts = (List<Home>)homes;
 

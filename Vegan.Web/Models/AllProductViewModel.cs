@@ -17,6 +17,7 @@ namespace Vegan.Web.Models
 
         // ================================ Properties =========================================
         public List<Home> HomeProducts { get; set; }
+        public List<Candle> CandleProducts { get; set; }
         //public IEnumerable<FoodHerb> FoodHerbProducts { get; set; }
         //public IEnumerable<Care> CareProducts { get; set; }
         //public IEnumerable<Supplement> SupplementProducts { get; set; }
@@ -29,6 +30,7 @@ namespace Vegan.Web.Models
         {
              UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
              HomeProducts = unitOfWork.Homes.GetAll().ToList();
+             CandleProducts = unitOfWork.Candles.GetAll().ToList();
 
         }
 
