@@ -134,7 +134,6 @@
     <Compile Include="DomainClasses\Supplement\PowerHealth.cs" />
     <Compile Include="DomainClasses\Supplement\SuperFood.cs" />
     <Compile Include="DomainClasses\Supplement\Supplement.cs" />
-    <Compile Include="ViewModels\ProductVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

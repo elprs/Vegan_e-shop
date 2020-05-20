@@ -30,16 +30,17 @@ namespace Vegan.Web.Controllers
             var careProducts = unitOfWork.Cares.GetAll();
             var supplementProducts = unitOfWork.Supplements.GetAll();
 
-            var productVM = new ProductVM(homeProducts, foodHerbProducts, careProducts, supplementProducts)
+            var productVMs= new ProductVM(homeProducts.ToList()/*, foodHerbProducts, careProducts, supplementProducts*/)
             {
-                HomeProducts = homeProducts,
-                FoodHerbProducts = foodHerbProducts,
-                CareProducts = careProducts,
-                SupplementProducts = supplementProducts
+                HomeProducts = homeProducts.ToList() //,
+                //FoodHerbProducts = foodHerbProducts,
+                //CareProducts = careProducts,
+                //SupplementProducts = supplementProducts
             };
-        
 
-            return View(productVM);
+            //IEnumerable < ProductVM > p = productVMs.
+
+            return View(productVMs);
         }
     }
 }
