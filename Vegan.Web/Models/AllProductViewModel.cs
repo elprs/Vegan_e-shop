@@ -16,18 +16,10 @@ namespace Vegan.Web.Models
     {
 
         // ================================ Properties =========================================
-        public List<Home> HomeProducts { get; set; }
-        public List<Candle> CandleProducts { get; set; }
-        //public IEnumerable<FoodHerb> FoodHerbProducts { get; set; }
-        //public IEnumerable<Care> CareProducts { get; set; }
-        //public IEnumerable<Supplement> SupplementProducts { get; set; }
-
-
-
-        // ================================ Constructors =======================================
-
-        public AllProductViewModel()
-        {        }
+        public IEnumerable<Home> HomeProducts { get; set; }
+        public IEnumerable<FoodHerb> FoodHerbProducts { get; set; }
+        public IEnumerable<Care> CareProducts { get; set; }
+        public IEnumerable<Supplement> SupplementProducts { get; set; }
 
     }
 

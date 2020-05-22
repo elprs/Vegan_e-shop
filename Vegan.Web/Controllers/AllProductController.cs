@@ -20,13 +20,9 @@ namespace Vegan.Web.Controllers
         {
             AllProductViewModel allProductVM = new AllProductViewModel();
 
-            var homes = unitOfWork.Homes.GetAll(); 
-            allProductVM.HomeProducts = (List<Home>)homes;
-            var candles = unitOfWork.Candles.GetAll().ToList();
-            allProductVM.CandleProducts = candles;
-
-            //HomeProducts = unitOfWork.Homes.GetAll().ToList();
-            //CandleProducts = unitOfWork.Candles.GetAll().ToList();
+            allProductVM.HomeProducts = unitOfWork.Homes.GetAll();
+            
+            //TODO for the other 3 categories
 
 
             return View(allProductVM);
