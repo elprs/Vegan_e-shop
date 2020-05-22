@@ -231,6 +231,7 @@
     <Content Include="Content\assets\images\trio-wide-zero-waste-home.jpg" />
     <Content Include="Content\assets\images\wood.jpg" />
     <Content Include="Content\assets\images\zw-living-2020-1.jpg" />
+    <Content Include="Content\assets\PagedList.css" />
     <Content Include="Content\assets\templates\common-html5\css\flexslider.css" />
     <Content Include="Content\assets\templates\common-html5\js\functions.js" />
     <Content Include="Content\assets\templates\common-html5\js\jquery.flexslider-min.js" />
