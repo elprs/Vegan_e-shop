@@ -1,37 +1,13 @@
-﻿@*@model IEnumerable<Vegan.Entities.Product>
+﻿@model IEnumerable<Vegan.Entities.Product>
 
 @{
     ViewBag.Title = "Shop - All Products";
-    Layout = "~/Views/Shared/_LayoutUser.cshtml";
-}*@
-
-
-
-@model  Vegan.Web.Models.AllProductViewModel
-
-@{
-    ViewBag.Title = "All Products";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-@*++++++++++++++++++++++++++++++++++++++*@
-
-
-@*<div id="top" pxlurl="[product_url]" class="container-fluid">
+<div id="top" pxlurl="[product_url]" class="container-fluid">
     <div class="contentbox-wrapper docsection-wrapper">
         <div class="contentbox docsection boxed productlist">
             <div id="pageheader" class=" ">
@@ -51,11 +27,8 @@
                         </div>
                     </div>
                 </div>
-            </div>*@
-            @*<div id="categoryproducts" class="productlist docsection-wrapper">
-                <div class="docsection boxed">
-                    <form action="view_category.asp?cat=189" method="post" name="frmsortby" id="frmsortby">*@
-            @*<div class="header-wrapper clearfix">
+            </div>
+            <div class="header-wrapper clearfix">
                 <div class="header">
                     <header>
                         <h2>
@@ -73,60 +46,20 @@
                     </header>
 
                 </div>
-            </div>*@
-            @*<div class="product">
-                    <div class="image" style="background-image: url(assets/images/thumbnails/Caboo_BambooToiletPaper_thumbnail.jpg);"><img src="assets/templates/vegan2020/images/img10x10blank.png" alt="Caboo Bamboo Toilet Paper" id="qv_1429"></div>
-                    <div class="frame"></div>
-                    <div class="info">
-                        <div class="info-data">
-                            <div>
-                                <div>
-                                    <div class="morebutton"><a href="Caboo-Bamboo-Toilet-Paper_p_1429.html" class="btn">Read More</a></div>
-                                    <div class="price">
-
-                                        <span class="yourprice">Your Price: <strong>$1.85</strong></span>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <h3><a href="Caboo-Bamboo-Toilet-Paper_p_1429.html"><span><span>Caboo Bamboo Toilet Paper<span><span></a></h3>
-                </div>*@
-
-        @*</div>*@
-        @*<div class="content container">
-            @foreach (var item in Model.CandleProducts)
+            </div>
+        </div>
+        <div class="content container">
+            @foreach (var item in Model)
             {
-
                 <div class="product">
-
-
-                    @{
-                        var typeClass = item.GetType().BaseType.ToString();
-                        string[] classss = typeClass.Split('.');
-
-                        string actionName = String.Concat("Details", classss[classss.Length - 1]);
-                        string finalString = "\"" + actionName + "\"";
-                        var t = classss[classss.Length - 1];
-
-                    <p>    @actionName</p>
-                    <p>    @typeClass</p>
-                    <p>   @classss[classss.Length - 1]</p>
-                    <p>    @finalString</p>
-
-
-                    <div @
-                         class="image"
+                    <div class="image"
                          style="
-                         filter: 
+                         filter:
                             -webkit-filter: blur(4px);
                             background-position: center;
                             background-repeat: no-repeat;
                             background-size: cover;
                          background-position: right top;
-
                             background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));
                             max-height: 400px; ">
 
@@ -137,10 +70,7 @@
                         <div class="info-data">
                             <div>
                                 <div>
-
-
-
-                                    @Html.ActionLink("Read More", finalString, new { productId = item.Id })
+                                    @Html.ActionLink("Read More", "DetailsProduct", new { productId = item.Id })
                                     <div class="price">
                                         <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
                                     </div>
@@ -148,14 +78,11 @@
                             </div>
                         </div>
                     </div>
-                    <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), finalString, new { productId = item.Id })</h3>
+                    <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), "DetailsProduct", new { productId = item.Id })</h3>
 
                 </div>
                 <hr />
             }
+        </div>
     </div>
-
-</div>*@
-
-
-
+</div>
