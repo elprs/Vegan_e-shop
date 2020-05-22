@@ -19,38 +19,14 @@ namespace Vegan.Web.Controllers
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
         // GET: AllProduct
-        public ActionResult IndexUser(string sortOrder, string searchTitle, int? searchminPrice, int? searchmaxPrice, int? page, int? pageNum)
+        public ActionResult IndexUser(string sortOrder, string searchTitle, int? searchminPrice, int? searchmaxPrice, int? page, int? pSize)
         {
 
             ViewBag.CurrentTitle = searchTitle;
             ViewBag.CurrentMinPrice = searchminPrice;
             ViewBag.CurrentMaxPrice = searchmaxPrice;
-
             ViewBag.CurrentSortOrder = sortOrder;
-            ViewBag.CurrentpageSize = pageNum;
-            
-
-            ViewBag.TitleView = "badge bedge-primary";
-            ViewBag.MinPriceView = "badge badge-primary";
-            ViewBag.AGView = "badge badge-primary";
-            ViewBag.DTView = "badge badge-primary";
-
-
-            //// GET: TestActors/Details/5
-            //public ActionResult SimpleDetails(int? id)
-            //{
-            //    ActorRepository actorRepository = new ActorRepository();
-            //    if (id == null)
-            //    {
-            //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            //    }
-            //    Actor actor = actorRepository.GetById(id);
-            //    if (actor == null)
-            //    {
-            //        return HttpNotFound();
-            //    }
-            //    return View(actor);
-            //}
+            ViewBag.CurrentpageSize = pSize;
 
 
 
@@ -60,7 +36,7 @@ namespace Vegan.Web.Controllers
 
             AllProductViewModel allProductVM = new AllProductViewModel();
 
-            ////Get all the eshop categories
+            //Get all the eshop categories
             var homes = unitOfWork.Homes.GetAll();
 
             //Sorting by title & price
@@ -73,7 +49,7 @@ namespace Vegan.Web.Controllers
                 default: homes = homes.OrderBy(x => x.Title).ThenBy(x => x.Price); break;
             }
             // Sorting page number
-            int pageSize = pageNum ?? 3;
+            int pageSize = pSize ?? 3;
             int pageNumber = page ?? 1;
 
 
