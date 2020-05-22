@@ -1100,7 +1100,6 @@
     <Content Include="Views\Supplement\Details.cshtml" />
     <Content Include="Views\Shared\TestLayoutTEST.cshtml" />
     <Content Include="Views\Shared\Components\User\_FooterUser.cshtml" />
-    <Content Include="Views\Shared\Components\User\_LayoutUser.cshtml" />
     <Content Include="Views\Shared\Components\User\_NavigationBarUser.cshtml" />
     <Content Include="Views\Product\IndexUser.cshtml" />
     <Content Include="Views\Candle\IndexUser.cshtml" />
