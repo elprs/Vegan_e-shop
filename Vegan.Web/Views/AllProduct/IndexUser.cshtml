@@ -2,7 +2,7 @@
 @using PagedList;
 @using PagedList.Mvc;
 
-    <link href="~/Content/assets/PagedList.css" rel="stylesheet" />
+<link href="~/Content/assets/PagedList.css" rel="stylesheet" />
 @{
     ViewBag.Title = "All Products";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
@@ -16,7 +16,7 @@
                     <div class="breadcrumbs-wrapper clearfix">
                         <div class="breadcrumbs">
                             <section>
-                                <p><a id='catCrumbHomeLink' href='/'>Home</a> > <a href="/Product/IndexUser">Products</a></p>
+                                <p><a id='catCrumbHomeLink' href='/'>Home</a> > <a href="/AllProduct/IndexUser">All Products</a></p>
                             </section>
                         </div>
                     </div>
@@ -30,17 +30,35 @@
                 </div>
             </div>
             <div class="header-wrapper clearfix">
-                <div class="header"                    >
+                <div class="header">
                     <header class="container">
                         <br />
                         <br />
                         <h2>
-                            
+
                             Products
                             <small>
                                 Sort by:
                                 @Html.ActionLink("Title", "IndexUser", "AllProduct", new { sortOrder = ViewBag.TitleSortParam }, null) |
                                 @Html.ActionLink("Price", "IndexUser", "AllProduct", new { sortOrder = ViewBag.PriceSortParam }, null)
+                            </small>
+                            </h2>
+                        <h2  class="" style="
+                                                float: right;
+                                                margin: 0 0 10px;
+                                                line-height: 40px;
+                                                text-align: right;">
+                            <small>
+
+                              @Html.PagedListPager((IPagedList)Model.HomeProducts, x => @Url.Action("IndexUser", "AllProduct", new
+                                                       {
+                                                           page = x,
+                                                           sortOrder = ViewBag.CurrentSortOrder,
+                                                           searchTitle = ViewBag.CurrentTitle,
+                                                           searchminPrice = ViewBag.CurrentMinPrice,
+                                                           searchmaxPrice = ViewBag.CurrentMaxPrice,
+                                                           pageSize = ViewBag.CurrentpageSize
+                                                       }))
                             </small>
                             @{
                                 SelectListItem a1 = new SelectListItem() { Text = "3", Value = "3" };
@@ -48,73 +66,32 @@
                                 SelectListItem a3 = new SelectListItem() { Text = "25", Value = "25" };
                                 List<SelectListItem> selectItems = new List<SelectListItem>() { a1, a2, a3 };
                             }
-
-
+                            </h2>
+                        <br />
+                        <h2 >
                             @*//TODO the form for the prices needs validation*@
-                            @using (Html.BeginForm("IndexUser", "AllProduct", FormMethod.Get, new { @class = "form" }))
-                            {
-
-                                @Html.TextBox("searchTitle", null, new { @class = "form-control", type = "text", placeholder = "Search Title", style = "display: block; width : 150px; height : 40px; color:grey;" });
-                                <br />
-                                @Html.TextBox("searchminPrice", null, new { @class = "form-control", type = "number", placeholder = "Search Min Price", style = "display: block; width : 150px;" })
-                                <br />
-                                @Html.TextBox("searchmaxPrice", null, new { @class = "form-control", type = "number", placeholder = "Search Max Price", style = "display: block; width : 150px;" })
-                                <br />
-                                @*string currentSortOrder = ViewBag.CurrentSortOrder;
-            <h2><small>@Html.Label("Items per page:")</small></h2>
-            <br />
-            @Html.TextBox("sortOrder", currentSortOrder, new { type = "hidden" })
-            <br />
-            @Html.DropDownList("pageSize", selectItems, new { @class = "form-control", style = "width : 150px;"    })
-            <br />*@
-                                <input type="submit" value="Search" class="btn" style="display: block;  width : 150px;" />
-
-                            }
-                        </h2>
-                        <h2 class="pager header" style="
-                                                float: right;
-                                                display: block;
-                                                margin: 0 0 10px;
-                                                padding-left: 10px;
-                                                line-height: 40px;
-                                                text-align: right;">
-
-
-
-                            <small>
-                                Pages  @Html.PagedListPager((IPagedList)Model.HomeProducts, x => @Url.Action("IndexUser", "AllProduct", new
-                   {
-                       page = x,
-                       sortOrder = ViewBag.CurrentSortOrder,
-                       searchTitle = ViewBag.CurrentTitle,
-                       searchminPrice = ViewBag.CurrentMinPrice,
-                       searchmaxPrice = ViewBag.CurrentMaxPrice,
-                       pageSize = ViewBag.CurrentpageSize
-                   }))
-                            </small>
-
-                            @*//TODO IDEa to move this to the right*@
                             @using (Html.BeginForm("IndexUser", "AllProduct", FormMethod.Get, new { @class = "form-inline" }))
                             {
                                 string currentSortOrder = ViewBag.CurrentSortOrder;
-                                <h2><small>@Html.Label("Items per page:")</small></h2>
-                                <br />
-                                @Html.TextBox("sortOrder", currentSortOrder, new { type = "hidden" })
-                                <br />
-                                @Html.DropDownList("pageSize", selectItems, new { @class = "form-control", style = "width : 150px;" })
-                                <br />
-                                <input type="submit" value="Search" class="btn" style="display: block;  width : 150px;" />
+                                <h2><small style="margin: 20px 20px 20px 20px; width : 150px;">@Html.Label("Items per page:")</small></h2>
+                                @Html.DropDownList("pageSize", selectItems, new { @class = "form-control", style = "margin: 25px 20px 20px 20px; width : 150px; height : 30px;" })
+
+                                @Html.TextBox("sortOrder", currentSortOrder, new { type = "hidden", width = "150px", height = "40px", color = "grey" })
+
+                                @Html.TextBox("searchTitle", null, new { @class = "form-control", type = "text", placeholder = "Search Title", style = "margin: 20px; width : 150px; height : 40px; color:grey;" });
+
+                                @Html.TextBox("searchminPrice", null, new { @class = "form-control", type = "number", placeholder = "Search Min Price", style = "margin: 20px; width : 150px; height : 40px; font-size : 18px; " })
+
+                                @Html.TextBox("searchmaxPrice", null, new { @class = "form-control", type = "number", placeholder = "Search Max Price", style = "margin: 20px; width : 150px; height : 40px; font-size : 18px;" })
+
+                                <input type="submit" value="Search" class="btn" style="margin: 0px 20px 20px 10px; width : 150px; height : 30px; font-size : 18px; text-align:center" />
 
                             }
-                        
-
                         </h2>
-                        
+                       
                     </header>
                 </div>
-               </div>
-
-          
+            </div>
         </div>
         <div class="content container">
             <div class="title-wrapper clearfix">
