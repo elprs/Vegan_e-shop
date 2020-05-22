@@ -20,7 +20,7 @@
                     <div class="title-wrapper clearfix">
                         <div class="title">
                             <header>
-                                <h1>Products</h1>
+                                <h1>All Products</h1>
                             </header>
                         </div>
                     </div>
@@ -29,6 +29,7 @@
             <div class="header-wrapper clearfix">
                 <div class="header">
                     <header>
+                        <br />  
                         <h2>
                             Products
                             <small> Sort by:  </small>
@@ -39,7 +40,7 @@
 
                             </select>
                             <br />
-                            <small>Total Items: @Model.CandleProducts.ToList().Count() </small> @*//TODO to make it correct*@
+                           
                         </h2>
                     </header>
 
@@ -47,19 +48,29 @@
             </div>
         </div>
         <div class="content container">
+            <div class="title-wrapper clearfix">
+                <div class="title">
+                    <header>
+                        <h2> Home Products</h2>
+                    </header>
+                    <small>Total Items: @Model.CandleProducts.ToList().Count() </small>
+                </div>
+            </div>
+
+
             @foreach (var item in Model.HomeProducts)
             {
-            <div class="product">
+                <div class="product">
 
-                @{
-                    string baseType = item.GetType().BaseType.ToString();
-                    var splitBaseType = baseType.Split('.');
-                    baseType = splitBaseType[splitBaseType.Length - 1];
+                    @{
+                        string baseType = item.GetType().BaseType.ToString();
+                        var splitBaseType = baseType.Split('.');
+                        baseType = splitBaseType[splitBaseType.Length - 1];
 
-                }
+                    }
 
-                <div class="image"
-                     style="
+                    <div class="image"
+                         style="
                          filter:
                             -webkit-filter: blur(4px);
                             background-position: center;
@@ -69,23 +80,23 @@
                             background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));
                             max-height: 400px; ">
 
-                    <img src="@Html.DisplayFor(modelItem => item.ImageURL)" style="max-height:400px;  filter: blur(0px);">
-                </div>
-                <div class="frame"></div>
-                <div class="info">
-                    <div class="info-data">
-                        <div>
+                        <img src="@Html.DisplayFor(modelItem => item.ImageURL)" style="max-height:400px;  filter: blur(0px);">
+                    </div>
+                    <div class="frame"></div>
+                    <div class="info">
+                        <div class="info-data">
                             <div>
-                                @Html.ActionLink("Read More", String.Format("{0}{1}", "Details", baseType), String.Format("{0}", baseType), new { productId = item.Id }, null)
-                                <div class="price">
-                                    <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
+                                <div>
+                                    @Html.ActionLink("Read More", String.Format("{0}{1}", "Details", baseType), String.Format("{0}", baseType), new { productId = item.Id }, null)
+                                    <div class="price">
+                                        <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), String.Format("{0}{1}", "Details", baseType), String.Format("{0}", baseType), new { productId = item.Id }, null)</h3>
                 </div>
-                <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), String.Format("{0}{1}", "Details", baseType), String.Format("{0}", baseType), new { productId = item.Id }, null)</h3>
-            </div>
                 <hr />
             }
         </div>
