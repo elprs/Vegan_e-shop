@@ -9,10 +9,11 @@ using Vegan.Entities.Supplement;
 using Vegan.Services.HomeRepository;
 using Vegan.Database;
 using Vegan.Services;
+using PagedList;
 
 namespace Vegan.Web.Models
 {
-    public class AllProductViewModel
+    public class AllProductViewModel 
     {
 
         // ================================ Properties =========================================
@@ -20,6 +21,7 @@ namespace Vegan.Web.Models
         public IEnumerable<FoodHerb> FoodHerbProducts { get; set; }
         public IEnumerable<Care> CareProducts { get; set; }
         public IEnumerable<Supplement> SupplementProducts { get; set; }
+
 
     }
 

@@ -1,5 +1,8 @@
 ﻿@model  Vegan.Web.Models.AllProductViewModel
+@using PagedList;
+@using PagedList.Mvc;
 
+    <link href="~/Content/assets/PagedList.css" rel="stylesheet" />
 @{
     ViewBag.Title = "All Products";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
@@ -27,25 +30,56 @@
                 </div>
             </div>
             <div class="header-wrapper clearfix">
-                <div class="header">
-                    <header>
-                        <br />  
+                <div class="header"                    >
+                    <header class="container">
+                        <br />
+                        <br />
                         <h2>
                             Products
-                            <small> Sort by:  </small>
-                            <select name="sortby" onchange="frmsortby.submit();" class="txtBoxStyle">
-                                <option value="1">Price: Low to High</option>
-                                <option value="2">Price: High to Low</option>
-                                <option value="3" selected>Name</option>
-
-                            </select>
-                            <br />
-                           
+                            <small>
+                                Sort by:
+                                @Html.ActionLink("Title", "IndexUser", "AllProduct", new { sortOrder = ViewBag.TitleSortParam }, null) |
+                                @Html.ActionLink("Price", "IndexUser", "AllProduct", new { sortOrder = ViewBag.PriceSortParam }, null)
+                            </small>
                         </h2>
-                    </header>
+                        <h2 class="pager header" style="
+                                                float: right;
+                                                display: block;
+                                                margin: 0 0 10px;
+                                                padding-left: 10px;
+                                                line-height: 40px;
+                                                text-align: right;
+                                            ">
 
+                            <small>
+                                Pages  @Html.PagedListPager((IPagedList)Model.HomeProducts, x => @Url.Action("Index", "AllProduct", new
+                              {
+                                  page = x,
+                                  sortOrder = ViewBag.CurrentSortOrder,
+                                  searchTitle = ViewBag.CurrentTitle,
+                                  searchminPrice = ViewBag.CurrentMinPrice,
+                                  searchmaxPrice = ViewBag.CurrentMaxPrice,
+                                  pageSize = ViewBag.CurrentpageSize
+                              }))
+                            </small>
+                        </h2>
+                        @{
+                            SelectListItem a1 = new SelectListItem() { Text = "3", Value = "3" };
+                            SelectListItem a2 = new SelectListItem() { Text = "10", Value = "10" };
+                            SelectListItem a3 = new SelectListItem() { Text = "25", Value = "25" };
+                            List<SelectListItem> items = new List<SelectListItem>() { a1, a2, a3 };
+                        }
+                    </header>
                 </div>
-            </div>
+                       
+                       
+
+                    
+              
+
+               </div>
+
+          
         </div>
         <div class="content container">
             <div class="title-wrapper clearfix">
@@ -61,6 +95,8 @@
             @foreach (var item in Model.HomeProducts)
             {
                 <div class="product">
+
+
 
                     @{
                         string baseType = item.GetType().BaseType.ToString();
