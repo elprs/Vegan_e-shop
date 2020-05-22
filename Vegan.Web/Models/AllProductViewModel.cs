@@ -27,12 +27,7 @@ namespace Vegan.Web.Models
         // ================================ Constructors =======================================
 
         public AllProductViewModel()
-        {
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
-            HomeProducts = unitOfWork.Homes.GetAll().ToList();
-            CandleProducts = unitOfWork.Candles.GetAll().ToList();
-
-        }
+        {        }
 
     }
 

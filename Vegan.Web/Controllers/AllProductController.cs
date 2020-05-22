@@ -22,6 +22,12 @@ namespace Vegan.Web.Controllers
 
             var homes = unitOfWork.Homes.GetAll(); 
             allProductVM.HomeProducts = (List<Home>)homes;
+            var candles = unitOfWork.Candles.GetAll().ToList();
+            allProductVM.CandleProducts = candles;
+
+            //HomeProducts = unitOfWork.Homes.GetAll().ToList();
+            //CandleProducts = unitOfWork.Candles.GetAll().ToList();
+
 
             return View(allProductVM);
         }

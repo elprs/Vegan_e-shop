@@ -1128,10 +1128,10 @@
     <Content Include="Views\Shared\TESTview.cshtml" />
     <Content Include="Views\HomeVegan\EditHomeVegan.cshtml" />
     <Content Include="Views\Administrator\Map.cshtml" />
+    <Content Include="Views\AllProduct\IndexUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\AllProduct\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
