@@ -191,6 +191,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdministratorController.cs" />
+    <Compile Include="Controllers\AllProductController.cs" />
     <Compile Include="Controllers\CandleController.cs" />
     <Compile Include="Controllers\CareController.cs" />
     <Compile Include="Controllers\FoodHerbController.cs" />
@@ -216,6 +217,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AllProductViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -1129,6 +1131,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\AllProduct\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
