@@ -6,111 +6,171 @@
 }
 
 
-
-
-
-<div id="top" pxlurl="[product_url]">
-    <div class="contentbox-wrapper">
+@*<div id="top" pxlurl="[product_url]" class="container-fluid">
+    <div class="contentbox-wrapper docsection-wrapper">
         <div class="contentbox docsection boxed productlist">
-            <div id="pageheader" class="docsection-wrapper ">
-                <div class="">
-                    <div class="breadcrumbs-wrapper clearfix">
-                        <div class="breadcrumbs">
-                            <section>
-                                <p><a id='catCrumbHomeLink' href='/'>Home</a> > <a href="/AllProduct/IndexUser">All Products </a> </p>
-                            </section>
+            <div id="pageheader" class=" ">*@
+
+    <div id="top" pxlurl="[product_url]">
+        <div class="contentbox-wrapper">
+            <div class="contentbox docsection boxed productlist">
+                <div id="pageheader" class="docsection-wrapper ">
+                    <div class="">
+                        <div class="breadcrumbs-wrapper clearfix">
+                            <div class="breadcrumbs">
+                                <section>
+                                    <p><a id='catCrumbHomeLink' href='/'>Home</a> > <a href="/AllProduct/IndexUser">All Products </a> </p>
+                                </section>
+                            </div>
                         </div>
-                    </div>
-                    <div class="title-wrapper clearfix">
-                        <div class="title">
-                            <header>
-                                <h1>All Products</h1>
-                            </header>
+                        <div class="title-wrapper clearfix content">
+                            <div class="title-wrapper clearfix">
+                                <div class="title">
+                                    <header>
+                                        <h1>All Products</h1>
+                                    </header>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="header-wrapper clearfix">
-                <div class="header">
-                    <header>
-                        <h2>
-                            <small>Total Items: @Model.HomeProducts.Count() </small>
-                        </h2>
-                    </header>
-                </div>
-            </div>
-            <div class="content-wrapper clearfix">
-                <div class="content">
 
-                    <div class="title-wrapper clearfix">
-                        <div class="title">
-                            <header>
-                                <h1>All Products</h1>
-                            </header>
-                        </div>
-                    </div>
+                <div id="categoryproducts" class="productlist docsection-wrapper">
+                    <div class="docsection boxed">
+                        <form action="view_category.asp?cat=189" method="post" name="frmsortby" id="frmsortby">
 
-                    @foreach (var item in Model.HomeProducts)
-                    {
+                            <div class="header-wrapper clearfix">
+                                <div class="header">
+                                    <header>
+                                        <h2>
+                                            Products
+                                            <small> Sort by:  </small>
+                                            <select name="sortby" onchange="frmsortby.submit();" class="txtBoxStyle">
+                                                <option value="1">Price: Low to High</option>
+                                                <option value="2">Price: High to Low</option>
+                                                <option value="3" selected>Name</option>
+
+                                            </select>
+                                            <br />
+
+                                            <small>Total Items: @Model.HomeProducts.Count() </small>
+
+                                        </h2>
+                                    </header>
+
+                                </div>
+                                <div class="content-wrapper clearfix">
+                                    @*<div class="content">
 
 
-                        <div class="product">
 
-                            @{
-                                string baseType = item.GetType().BaseType.ToString();
-                                var splitBaseType = baseType.Split('.');
-                                baseType = splitBaseType[splitBaseType.Length - 1];
+            @foreach (var item in Model.HomeProducts)
+            {
 
-                            }
 
-                            <div class="image" style=" background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));"><img src="@Html.DisplayFor(modelItem => item.ImageURL)"></div>
-                            <div class="frame"></div>
-                            <div class="info">
-                                <div class="info-data">
-                                    <div>
-                                        <div>
-                                            @Html.ActionLink("Read More", String.Format("{0}{1}", "Details", baseType), String.Format("{0}", baseType), new { productId = item.Id }, null)
-                                            <div class="price">
-                                                <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
-                                            </div>
-                                        </div>
+                <div class="product">
+
+                    @{
+                        string baseType = item.GetType().BaseType.ToString();
+                        var splitBaseType = baseType.Split('.');
+                        baseType = splitBaseType[splitBaseType.Length - 1];
+
+                    }
+
+                    <div class="image" style=" background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));"><img src="@Html.DisplayFor(modelItem => item.ImageURL)"></div>
+                    <div class="frame"></div>
+                    <div class="info">
+                        <div class="info-data">
+                            <div>
+                                <div>
+                                    @Html.ActionLink("Read More", String.Format("{0}{1}", "Details", baseType), String.Format("{0}", baseType), new { productId = item.Id }, null)
+                                    <div class="price">
+                                        <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
                                     </div>
                                 </div>
                             </div>
-                            <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), "DetailsCandle", new { productId = item.Id })</h3>
                         </div>
-                    }
+                    </div>
+                    <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), "DetailsCandle", new { productId = item.Id })</h3>
                 </div>
-                <h1>    0000000000000000000000000000000000000000000000 </h1>
-                <div class="content">
-                    @foreach (var item in Model.CandleProducts)
-                    {
+            }
+        </div>*@
+                                    <h1>    0000000000000000000000000000000000000000000000 </h1>
+                                    <div class="content">
+                                        @foreach (var item in Model.CandleProducts)
+                                        {
+
+                                            @*
 
 
-                        <div class="product">
-                            <div class="image" style=" background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));"><img src="@Html.DisplayFor(modelItem => item.ImageURL)"></div>
-                            <div class="frame"></div>
-                            <div class="info">
-                                <div class="info-data">
-                                    <div>
-                                        <div>
-                                            @Html.ActionLink("Read More", "DetailsCandle", "Candle", new { productId = item.Id }, null)
-                                            <div class="price">
-                                                <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
+
+                                                            @Html.ActionLink("Read More", finalString, new { productId = item.Id })
+                                                            <div class="price">
+                                                                <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
+                                            <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), finalString, new { productId = item.Id })</h3>
+
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), "DetailsCandle", new { productId = item.Id })</h3>
-                        </div>
-                    }
+                                        <hr />*@
+
+
+
+
+                                        <div class="product">
+                                            @*<div class="image" style=" background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));"><img src="@Html.DisplayFor(modelItem => item.ImageURL)"></div>*@
+
+
+                                            <div class="image"
+                                                 style="
+                                                            filter:
+                                                               -webkit-filter: blur(4px);
+                                                               background-position: center;
+                                                               background-repeat: no-repeat;
+                                                               background-size: cover;
+                                                            background-position: right top;
+
+                                                               background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));
+                                                               max-height: 400px; ">
+
+                                                <img src="@Html.DisplayFor(modelItem => item.ImageURL)" style="max-height:400px;  filter: blur(0px);">
+                                            </div>
+                                            <div class="frame"></div>
+                                            <div class="info">
+                                                <div class="info-data">
+                                                    <div>
+                                                        <div>
+
+                                                            @*<div class="frame"></div>
+                                                            <div class="info">
+                                                                <div class="info-data">
+                                                                    <div>
+                                                                        <div>*@
+
+                                                                            @Html.ActionLink("Read More", "DetailsCandle", "Candle", new { productId = item.Id }, null)
+                                                                            <div class="price">
+                                                                                <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), "DetailsCandle", new { productId = item.Id })</h3>
+                                                        </div>
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+</form>
+
+                    </div>
                 </div>
             </div>
-
         </div>
     </div>
-</div>
 
 
 
