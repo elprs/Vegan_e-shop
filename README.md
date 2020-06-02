@@ -3,8 +3,6 @@ Online Health store
 
 A web application using MVC
 
-Students: Kanellis Stathis, Koutsogiorgos Evangelos, Parisi Eleni, Poulakos Giorgos
-
 Project Owner : Gatsos Ektoras
 Athens, 2020
 Overview - Introduction
@@ -15,7 +13,7 @@ the online purchases with easy-to-interact product customer-presentation.
 Problem statement
 The support of health stores in accepting online orders and delivering shipments is a necessity. 
 In 2020 where working from home and avoiding social contact, the customers need to reach products that
-inhase health. Thus businessed develop intrest in e-commerce. It is important to provide an elegant, easy to access system  
+inhase health. These businesses develop intrest in e-commerce. It is important to provide an elegant, easy to access system  
 to assist the needs of the customers and the administration team. 
 Through the web application, the latter can easily access or alter their product details and keep track of important statistics, 
 while the customers can search and order easily the provided items-to-be-ordered. 
@@ -88,25 +86,22 @@ Technologies/tools:
 C#
 Visual Studio
 SQL Server
-HTML5/CSS
-ASP.NET MVC
-Internet Browsers
 web.API
-Paypal.sandbox (tutorial μονοι μας)
-JavaScript
-JQuery
+REST API
+
+HTML5/CSS
+Paypal.sandbox
+JavaScript/ JQuery
 Bootstrap 4
 
 
 Methodology
-The team of 4 implemented a scrum working approach. A weekly meeting determined the decisions that needed to be made. 
+The team implemented a scrum working approach. A weekly meeting determined the decisions that needed to be made. 
 The use of Trello supported individual independence and team collaboration on tasks. A 10 minute meeting happened daily
 in addition to particular module oriented meetings.
+
 The use of GitHub collaboration tools were used. 
+
 The S.O.L.I.D principles were followed. 
-
-
-Milestones and Time plan
-The project was completed in a month. 
 
 
